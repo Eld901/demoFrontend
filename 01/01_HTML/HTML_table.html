@@ -1,0 +1,105 @@
+<!-- 20250614 前端学习笔记 (HTML相关知识)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格</title>
+</head>
+<body>
+    <h3>表格</h3>
+    <p> <a href="./00_HTML_.html">导航</a> </p>
+    <hr>
+    <p> <font size="2">table tr th td</font> </p>
+    <p> <font size="2">thead tbody tfoot</font> </p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>表头1</th>
+                <th>表头2</th>
+                <th>表头3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>第1行</td>
+                <td>第1行</td>
+                <td>第1行</td>
+            </tr>
+            <tr>
+                <td>第2行</td>
+                <td>第2行</td>
+                <td>第2行</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>第3行</td>
+                <td>第3行</td>
+                <td>第3行</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <p> <font size="2">跨行合并 rowspan</font> </p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>表头1</th>
+                <th>表头2</th>
+                <th>表头3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>第1行</td>
+                <td rowspan="2">第1行</td>
+                <td>第1行</td>
+            </tr>
+            <tr>
+                <td>第2行</td>
+                <td>第2行</td>
+                <!-- <td>第2行</td> -->
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>第3行</td>
+                <td>第3行</td>
+                <td>第3行</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <p> <font size="2">跨列合并 colspan</font> </p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>表头1</th>
+                <th>表头2</th>
+                <th>表头3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>第1行</td>
+                <td>第1行</td>
+                <td>第1行</td>
+            </tr>
+            <tr>
+                <td>第2行</td>
+                <td>第2行</td>
+                <td>第2行</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>第3行</td>
+                <td colspan="2">第3行</td>
+                <!-- <td>第3行</td> -->
+            </tr>
+        </tfoot>
+    </table>
+    <hr>
+</body>
+</html>

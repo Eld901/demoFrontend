@@ -1,0 +1,83 @@
+<!-- 20250626 前端学习笔记 (CSS相关知识)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外边距问题</title>
+    <style>
+        .div1 {
+            width: 200px;
+            height: 100px;
+            background-color: aquamarine;
+
+            margin-bottom: 10px;
+        }
+        .div2 {
+            width: 200px;
+            height: 100px;
+            background-color: paleturquoise;
+
+            margin-top: 20px;
+        }
+        .div3 {
+            background-color: greenyellow;
+        }
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: paleturquoise;
+
+            /* overflow: hidden; */
+            border-top: 1px solid #000;
+        }
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+
+            margin-top: 10px;
+        }
+        .span1 {
+            margin: 50px;
+            padding: 20px;
+            line-height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <h3>外边距问题</h3>
+    <p> <a href="./00_HTML_.html">导航</a> </p>
+    <hr>
+    
+    <p> 
+        <font size="2">合并问题：外边距相互覆盖，取大值</font><br>
+    
+        <div class="div1">div1 <br>margin-bottom: 10px;</div>
+        <div class="div3">div3</div>
+        <div class="div2">div2 <br>margin-top: 20px;</div>
+    </p><hr>
+
+    <p> 
+        <font size="2">塌陷问题：子级标签添加上边距，会影响父级的上边距</font><br>
+        <font size="2">解决：</font><br>
+        <font size="2">1 取消子级 margin，设置父级 padding 和 box-sizing:border-box</font><br>
+        <font size="2">2 设置父级 overflow : hidden</font><br>
+        <font size="2">3 设置父级 border-top</font><br>
+    
+        <div class="div3">div3</div>
+        <div class="father">
+            <div class="son"></div>
+        </div>
+    </p><hr>
+    
+    <p> 
+        <font size="2">行内元素：使用 margin 和 padding 无法改变垂直位置</font><br>
+        <font size="2">解决： 使用 line-height 生效</font><br>
+    
+        <span class="span1">span1</span>
+        <span class="span2">span2</span>
+    </p>
+    <hr>
+</body>
+</html>

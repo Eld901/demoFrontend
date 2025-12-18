@@ -1,0 +1,257 @@
+<!-- 20250615 前端学习笔记 (CSS相关知识)-->
+<!-- 20250626 前端学习笔记 (CSS相关知识)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子</title>
+    <style>
+        .yellow {
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+        }
+        .green {
+            background-color: yellowgreen;
+            width: 200px;
+            height: 200px;
+        }
+        .green2 {
+            background-color: yellowgreen;
+            width: 100px;
+            height: 100px;
+        }
+        .horizontal {
+            display: flex;
+        }
+        .father1 {
+            display: flex;
+        }
+        .father2 {
+            display: flex;
+            justify-content: center;
+        }
+        .father3 {
+            display: flex;
+            justify-content: end;
+        }
+        .father4 {
+            display: flex;
+            align-items: center;
+        }
+        .father5 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .father6 {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
+        .father7 {
+            display: flex;
+            align-items: end;
+        }
+        .father8 {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+        }
+        .father9 {
+            display: flex;
+            justify-content: end;
+            align-items: end;
+        }
+        .border {
+            /* border: 5px solid palegreen; */
+            /* border: 5px dashed greenyellow; */
+            /* border: 5px dotted green; */
+            
+            border-top: 5px dotted green;
+            border-right: 5px dashed palegreen;
+            border-bottom: 5px solid paleturquoise;
+            border-left: 5px solid greenyellow;
+        }
+        .padding {
+            /* padding-top: 10px; */
+            /* padding-right: 10px; */
+            /* padding-bottom: 10px; */
+            /* padding-left: 10px; */
+
+            /* padding: 10px 20px 40px 80px; */
+            /* padding: 10px 40px 80px; */
+            /* padding: 10px 80px; */
+            padding: 10px;
+        }
+        .boxsizing {
+            box-sizing: border-box;
+        }
+        .margin {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin: 0 auto;
+        }
+        .radius {
+            /* border-radius: 20px 0px 20px 0px; */
+            /* border-radius: 20px 20px 20px 20px; */
+            /* border-radius: 20px 20px 20px; */
+            /* border-radius: 20px 20px; */
+            /* border-radius: 20px; */
+        }
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            margin: 0 auto;
+        }
+        .round {
+            border-radius: 50%;
+            /* 宽高的一半 */
+        }
+        .rectangle {
+            width: 200px;
+            height: 100px;
+            background-color: greenyellow;
+            margin: 0 auto;
+        }
+        .capsule {
+            border-radius: 50px;
+            /* 高的一半 */
+        }
+        .shadow {
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            margin: 0 auto;
+
+            box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.5) inset;
+            box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 5px 50px 1px rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 5px 10px 50px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h3>盒子</h3>
+    <p> <a href="./00_HTML_.html">导航</a> </p>
+    <hr>
+
+    <p> 
+        <font size="2">盒子阴影 box-shadow</font><br>
+        <font size="2">x偏移 y偏移 模糊半径 扩散半径 颜色 内外阴影</font><br>
+        <font size="2">外阴影 默认</font><br>
+        <font size="2">内阴影 inset</font><br>
+
+        <div class="shadow">阴影</div><br>
+    </p><hr>
+    <p> 
+        <font size="2">盒子圆角 border-radius</font><br>
+
+        <div class="square">正方</div><br>
+        <div class="square round">正圆</div><br>
+        <div class="rectangle">长方</div><br>
+        <div class="rectangle capsule">胶囊</div>
+    </p><hr>
+    <p> 
+        <font size="2">盒子尺寸</font><br>
+        <font size="2">撑大尺寸： 主体 + padding + border</font><br>
+        <font size="2">内减模式：box-sizing: border-box</font><br>
+    </p><hr>
+    <p> 
+        <font size="2">margin</font><br>
+        <font size="2">版心居中：margin: 0 auto;</font><br>
+        <div class="margin">div</div>
+    </p><hr>
+
+    <p> 
+        <font size="2">border</font><br>
+        <font size="2">点 dotted</font><br>
+        <font size="2">虚 dashed</font><br>
+        <font size="2">实 solid</font><br>
+
+        <div class="yellow border">div1 撑大</div><br>
+
+        <font size="2">box-sizing: border-box</font><br>
+        <div class="green2 border boxsizing">div2 内减</div>
+        <hr>
+    </p>
+
+    <p> 
+        <font size="2">padding</font><br>
+        <font size="2">上右下左</font><br>
+        <font size="2">上中下</font><br>
+        <font size="2">顺时针</font><br>
+
+        <div class="yellow padding">div1 撑大</div><br>
+
+        <font size="2">box-sizing: border-box</font><br>
+        <div class="green2 padding boxsizing">div2 内减</div>
+        <hr>
+    </p>
+
+    <p> <font size="2">垂直</font>
+        <div class="yellow">div1</div>
+        <div class="green2">div2</div>
+    </p>
+    <p> <font size="2">水平</font>
+        <div class="horizontal">
+            <div class="yellow">div1</div>
+            <div class="green2">div2</div>
+        </div>
+    </p><hr>
+    
+    <p> 
+        <font size="2">内外 class="father"</font><br>
+        <font size="2">1 display: flex;</font>
+        <div class="green father1">
+            <div class="yellow">div1</div>
+        </div><br>
+    </p>
+    <p> <font size="2">2 display: flex; justify-content: center;</font>
+        <div class="green father2">
+            <div class="yellow">div1</div>
+        </div><br>
+    </p>
+    <p> <font size="2">3 display: flex; justify-content: end;</font>
+        <div class="green father3">
+            <div class="yellow">div1</div>
+        </div><br>
+    </p>
+    <p> <font size="2">4 display: flex; align-items: center;</font>
+        <div class="green father4">
+            <div class="yellow">div1</div>
+        </div><br>
+    </p>
+    <p> <font size="2">5 display: flex;justify-content: center; align-items: center;</font>
+        <div class="green father5">
+            <div class="yellow">div1</div>
+        </div><br>
+    </p>
+    <p> <font size="2">6 display: flex;justify-content: end; align-items: center;</font>
+        <div class="green father6">
+            <div class="yellow">div1</div>
+        </div><br>
+    </p>
+    <p> <font size="2">7 display: flex; align-items: end;</font>
+        <div class="green father7">
+            <div class="yellow">div1</div>
+        </div><br>
+    </p>
+    <p> <font size="2">8 display: flex; justify-content: center; align-items: end;</font>
+        <div class="green father8">
+            <div class="yellow">div1</div>
+        </div><br>
+    </p>
+    <p> <font size="2">9 display: flex; justify-content: end; align-items: end;</font>
+        <div class="green father9">
+            <div class="yellow">div1</div>
+        </div>
+    </p>
+    
+    
+    <hr>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!-- 20250626 前端学习笔记 (CSS相关知识)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结构伪类选择器</title>
+    <style>
+        li:first-child {
+            background-color: aquamarine;
+        }
+        li:last-child {
+            background-color:aqua;
+        }
+        li:nth-child(3) {
+            background-color:paleturquoise;
+        }
+
+        li:nth-child(3n) {
+            background-color:yellow;
+        }
+        li:nth-child(n+10) {
+            background-color:greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <h3>结构伪类选择器</h3>
+    <p> <a href="./00_HTML_.html">导航</a> </p>
+    <hr>
+    
+    <p> <font size="2">E:first-child</font><br>
+        <font size="2">E:last-child</font><br>
+        <font size="2">E:nth-child(N)</font><br><br>
+
+        <font size="2">E:nth-child(function)</font>公式<br>
+        <font size="2">E:nth-child(5n)</font>倍数项<br>
+        <font size="2">E:nth-child(2n)</font>偶数项<br>
+        <font size="2">E:nth-child(2n+1)</font>
+        <font size="2">E:nth-child(2n-1)</font>奇数项<br>
+        <font size="2">E:nth-child(n+5)</font>之后项<br>
+        <font size="2">E:nth-child(-n+5)</font>之前项<br>
+    </p>
+
+    <p> 
+        <ol>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+            <li>测试</li>
+        </ol>
+    </p>
+    
+    <hr>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!-- 20250614 前端学习笔记 (HTML相关知识)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+</head>
+<body>
+    <h3>表单</h3>
+    <p> <a href="./00_HTML_.html">导航</a> </p>
+    <hr>
+
+    <p> <font size="2">input</font><br>
+    <p> <font size="2">type="text" placeholder="xxx"</font><br>
+        文本框：<input type="text" placeholder="文本框">
+    </p>
+
+    <p> <font size="2">type="password" placeholder="xxx"</font><br>
+        密码框：<input type="password" placeholder="密码框">
+    </p>
+
+    <p> <font size="2">type="radio" name="xxx" checked="checked"</font><br>
+        单选框：
+        <input type="radio" name="gender" checked>
+        <input type="radio" name="gender">
+    </p>
+
+    <p> <font size="2">type="checkbox" checked="checked"</font><br>
+        多选框：
+        <input type="checkbox" checked>
+        <input type="checkbox">
+    </p>
+
+    <p> <font size="2">type="file" multiple="multiple"</font><br>
+        <input type="file" multiple>
+    </p><!-- multiple 一次上传多个文件-->
+    <hr>
+
+
+    <p> <font size="2">select option selected="selected"</font><br>
+        下拉选项：
+        <select>
+            <option selected>选项1</option>
+            <option>选项2</option>
+            <option>选项3</option>
+        </select>
+    </p>
+    <hr>
+
+    <p> <font size="2">textarea</font><br>
+        <textarea>文本域</textarea>
+    </p>
+    <hr>
+
+    <p> <font size="2">label</font><br>
+        <!-- 作用：增大点击范围 -->
+        <input type="radio" id="A" name="label">
+        <label for="A">点击文字</label>
+        <!-- 写法2 -->
+        <label><input type="radio" name="label">点击文字</label>
+    </p>
+    <hr>
+
+    <p> <font size="2">form button</font><br>
+    <p> <font size="2">reset submit button</font><br>
+        <form action=""><!-- action 发送数据的地址-->
+            <input type="text" placeholder="测试">
+            <button type="reset">重置</button>
+            <button type="submit">提交</button>
+            <button type="button">普通按钮</button>
+        </form>
+    </p>
+    <hr>
+</body>
+</html>

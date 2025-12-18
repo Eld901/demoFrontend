@@ -1,0 +1,145 @@
+<!-- 20250614 前端学习笔记 (HTML相关知识)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频</title>
+    <link rel="stylesheet" href="../css/bg.css">
+    <link rel="stylesheet" href="../css/color.css">
+</head>
+<body>
+    <div id="container">
+    <ol>
+        <li><a href="../00_HTML_.html">返回</a></li>
+        <li><h3>音频</h3></li>
+        <li>&lt;audio&gt;&lt;/audio&gt;标签的使用方法</li>
+        <hr>
+    </ol>
+    <ol>
+        <li><p>(1) src：音频文件的URL</p></li>
+        <li><code>&lt;audio src="https://www.runoob.com/try/demo_source/horse.mp3" controls&gt;&lt;/audio&gt;</code></li>
+        <li><code>&lt;audio src="" controls&gt;&lt;/audio&gt;</code> controls：控制面板</li>
+        <li><code>&lt;audio src="" controls preload&gt;&lt;/audio&gt;</code> preload：预加载，与autoplay冲突</li>
+        <li><code>&lt;audio src="" controls autoplay&gt;&lt;/audio&gt;</code> autoplay：自动播放</li>
+        <li><code>&lt;audio src="" controls loop&gt;&lt;/audio&gt;</code> loop：循环播放</li>
+        <li><code>&lt;audio src="" controls muted&gt;&lt;/audio&gt;</code> muted：禁音状态</li>
+        <li><audio src="https://www.runoob.com/try/demo_source/horse.mp3" controls></audio></li>
+    </ol>
+    <ol>
+        <li><p>(2) 检测浏览器支持情况</p></li>
+        <li>1. 标签法检测</li>
+        <li><code>&lt;audio src="" controls&gt;您的浏览器不支持HTML5音频&lt;/audio&gt;</code> </li>
+        <li>2. Javascript法检测</li>
+        <li><pre><code class="block">&lt;div id="support"&gt;&lt;/div&gt;
+&lt;script&gt;
+function test () {
+    var supportAudio = !!document.createElement("audio").canPlayType;
+    if (supportAudio) {
+        document.getElementById ("support").innerHTML = "您的浏览器支持HTML5音频"
+    } else {
+        document.getElementById ("support").innerHTML = "您的浏览器不支持HTML5音频"
+    }
+}
+test ();
+&lt;/script&gt;</code></pre></li>
+        <li>代码解释</li>
+        <li><div class="note">
+            <code>&lt;div id="support"&gt;&lt;/div&gt;</code> 创建div
+            <br><code>function test () {}</code> 创建函数
+            <br><code>!! </code> 将检测结果转换为布尔值
+            <br><code>document.getElementById ("support").innerHTML</code> 传递赋值
+            <br><code>test ();</code> 调用函数
+        </div></li>
+        <li>代码示例</li>
+        <li><div id="support" class="note"></div>
+            <script>
+                function test () {
+                    var supportAudio = !!document.createElement("audio").canPlayType;
+                    if (supportAudio) {
+                        document.getElementById ("support").innerHTML = "您的浏览器支持HTML5音频"
+                    } else {
+                        document.getElementById ("support").innerHTML = "您的浏览器不支持HTML5音频"
+                    }
+                }
+                test ();
+            </script>
+        </li>
+    </ol>
+    <ol>
+        <li><p>(3) 音频来源多样性</p></li>
+        <li><pre><code class="block">&lt;audio controls&gt;
+    &lt;source src="music/test.mp3"&gt;
+    &lt;source src="music/test.ogg"&gt;
+    您的浏览器不支持HTML5音频
+&lt;/audio&gt;</code></pre></li>
+        <li><div class="note">
+            目前HTML5支持的常用音频格式有：<br>
+            MP3——后缀名为.mp3 <br>
+            Ogg——后缀名为.ogg <br>
+            Wav——后缀名为.wav <br>
+            目前尚不存在得到所有浏览器支持的音频格式， <br>
+            因此在开发过程中，如果不明确用户所使用的浏览器类型， <br>
+            则需要起码准备两种音频格式备用
+            <hr>
+            浏览器先判断音频是否支持mp3格式，支持则播放test.mp3文件
+            <br>否则判断是否支持ogg格式，支持则播放test.ogg文件
+            <br>如果都不支持，则返回&lt;audio&gt;标签一个错误事件
+        </div></li>
+    </ol>
+
+    <ol>
+        <li><p>(4) 自定义音频控制</p></li>
+        <li><pre><code class="block">&lt;audio id="music01"&gt;
+    &lt;source src="music/test.ogg"&gt;
+    &lt;source src="music/test.mp3"&gt;
+    您的浏览器不支持HTML5音频
+&lt;/audio&gt;
+&lt;button id="btn" onclick="toggleMusic()"&gt;播放&lt;/button&gt;
+&lt;script&gt;
+    var music = document.getElementById("music01");
+    var toggleBtn = document.getElementById("btn");
+    function toggleMusic() {
+        if (music.paused) {
+            music.play();
+            toggleBtn.innerHTML = "暂停";
+        } else {
+            music.pause();
+            toggleBtn.innerHTML = "播放";
+        }
+    }
+&lt;/script&gt;
+        </code></pre></li>
+        <li>代码解释</li>
+        <li><div class="note">
+            <code>&lt;audio&gt;</code>创建audio对象，去掉controls禁用浏览器自带音频控件
+            <br><code>&lt;button&gt;</code>创建button对象
+            <br><code>onclick="toggleMusic()"</code>点击调用函数
+            <br><code>function toggleMusc () {}</code>创建函数
+        </div></li>
+        <li>代码示例</li>
+        <li>
+            <audio id="music01">
+                <source src="../music/test.mp3">
+                <source src="../music/test.ogg">
+                <source src="https://www.runoob.com/try/demo_source/horse.mp3">
+            </audio>
+            <button id="btn" onclick="toggleMusic()">播放</button>
+            <script>
+                var music = document.getElementById("music01");
+                var toggleBtn = document.getElementById("btn");
+                function toggleMusic() {
+                    if (music.paused) {
+                        music.play();
+                        toggleBtn.innerHTML = "暂停";
+                    } else {
+                        music.pause();
+                        toggleBtn.innerHTML = "播放";
+                    }
+                }
+            </script>
+        </li>
+    </ol>
+    </div>
+</body>
+</html>
