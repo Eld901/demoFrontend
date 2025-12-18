@@ -1,0 +1,246 @@
+<!-- 20250628 前端学习笔记 (CSS相关知识)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性布局</title>
+    <style>
+        .box {
+            display: flex;
+
+            height: 100px;
+            border: 1px solid #000;
+        }
+        .box div {
+            width: 200px;
+            /* height: 100px; */
+            background-color:paleturquoise;
+        }
+
+
+
+        .container {
+            display: flex;
+            justify-content: flex-end;
+            justify-content: center;
+
+            border: 1px solid #000;
+        }
+        .container div {
+            width: 200px;
+            height: 100px;
+            background-color:paleturquoise;
+        }
+        .flex1 {
+            justify-content: space-between;
+        }
+        .flex2 {
+            justify-content: space-around;
+        }
+        .flex3 {
+            justify-content: space-evenly;
+        }
+
+
+        .container2 {
+            display: flex;
+            align-items: flex-end;
+            align-items: center;
+
+            height: 300px;
+            border: 1px solid #000;
+        }
+        .container2 div {
+            width: 200px;
+            height: 100px;
+            background-color:paleturquoise;
+        }
+        .container2 div:nth-child(2) {
+            align-self: flex-end;
+            width: 200px;
+            height: 100px;
+            background-color:paleturquoise;
+        }
+
+
+        .container3 {
+            display: flex;
+            flex-direction: row-reverse;
+            flex-direction: column;
+            flex-direction: column-reverse;
+
+            height: 300px;
+            border: 1px solid #000;
+        }
+        .container3 div {
+            width: 200px;
+            height: 100px;
+            background-color:paleturquoise;
+        }
+        
+
+        .container4 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            height: 200px;
+            border: 1px solid #000;
+        }
+        .container4 div {
+            width: 100px;
+            height: 100px;
+            background-color:aquamarine;
+        }
+        
+
+        .container5 {
+            display: flex;
+            flex-direction: column;
+
+            height: 200px;
+            border: 1px solid #000;
+        }
+        .container5 div {
+            /* height: 100px; */
+            background-color:paleturquoise;
+        }
+        .container5 div:nth-child(1) {
+            width: 200px;
+        }
+        .container5 div:nth-child(2) {
+            flex: 1;
+            background-color:aliceblue;
+        }
+        .container5 div:nth-child(3) {
+            flex: 2;
+            background-color:lightcyan;
+        }
+    </style>
+</head>
+<body>
+    <h3>弹性布局</h3>
+    <p> <a href="./00_HTML_.html">导航</a> </p>
+    <hr>
+    
+    <p> 
+        <font size="2">弹性布局 flex</font><br>
+        <font size="2">父级：弹性容器</font><br>
+        <font size="2">子级：弹性盒子</font><br>
+        <font size="2">主轴：默认水平</font><br>
+        <font size="2">侧轴：默认垂直 (交叉轴)</font><br><br>
+        <font size="2">子级自动挤压/拉伸</font><br>
+        <font size="2">主轴：默认靠内容撑开</font><br>
+        <font size="2">侧轴：默认拉伸</font><br>
+        <div class="box">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </p><hr>
+
+    <p> 
+        <font size="2">主轴对齐方式 justify-content </font><br>
+        <font size="2">居左 flex-start </font><br>
+        <font size="2">居右 flex-end </font><br>
+        <font size="2">居中 center </font><br>
+        <font size="2">之间 space-between </font><br>
+        <font size="2">两侧 space-around </font><br>
+        <font size="2">均分 space-evenly </font><br>
+        <div class="container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container flex1">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container flex2">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container flex3">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </p><hr>
+
+    <p> 
+        <font size="2">侧轴对齐方式 align-items(全部) align-self(单独) </font><br>
+        <font size="2">拉伸 stretch </font><br>
+        <font size="2">居中 center </font><br>
+        <font size="2">起点 flex-start </font><br>
+        <font size="2">终点 flex-end </font><br>
+        <div class="container2">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </p><hr>
+
+
+    <p>
+        <font size="2">修改主轴方向 flex-direction </font><br>
+        <font size="2">水平 row</font><br>
+        <font size="2">垂直 column</font><br>
+        <font size="2">反向 row-reverse</font><br>
+        <font size="2">反向 column-reverse</font><br>
+        <div class="container3">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div><br>
+        <font size="2">应用：修改主轴，居中</font><br>
+        <font size="2">flex-direction: column (主轴垂直，侧轴水平)</font><br>
+        <font size="2">justify-content: center (主轴)</font><br>
+        <font size="2">align-items: center; (侧轴)</font><br>
+        <div class="container4">
+            <div>1</div>
+        </div>
+    </p><hr>
+
+    <p>
+        <font size="2">弹性伸缩比 flex</font><br>
+        <font size="2">flex-direction: column; (主轴垂直，侧轴水平)</font><br>
+        <font size="2">
+            .container5 div:nth-child(1) {
+                width: 200px;
+            }<br>
+            .container5 div:nth-child(2) {
+                flex: 1;
+                background-color:aliceblue;
+            }<br>
+            .container5 div:nth-child(3) {
+                flex: 2;
+                background-color:lightcyan;
+            }
+        </font><br>
+        <div class="container5">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </p><hr>
+
+    <p>
+        <font size="2">弹性盒子换行 flex-wrap</font><br>
+    </p><hr>
+    
+    <p>
+        <font size="2">行对齐方式 align-content</font><br>
+    </p>
+    <hr>
+</body>
+</html>

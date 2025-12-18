@@ -1,0 +1,125 @@
+<!-- 20250615 前端学习笔记 (CSS相关知识)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体</title>
+    <style>
+        .color {
+            background-color: lightcyan;
+            color: aqua;
+        }
+        .size {
+            font-size: 12px;
+        }/* 默认 16px */
+        .weight {
+            font-weight: 700;
+        }/* 默认  400 */
+        .style {
+            font-style: normal;
+        }/* 默认 italic */
+        .height {
+            height: 50px;
+            line-height: 50px;
+        }/* 无单位 行高为字号倍数； */
+        .family {
+            font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino, Sans GB, "\5B8B\4F53", sans-serif;
+        }/* 无衬线字体 sans-serif */
+        .font {
+            font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino, Sans GB, "\5B8B\4F53", sans-serif;
+            color: #666;
+        }/* 顺序：倾斜 加粗 字号/行高 字体 */
+        .indent{
+            text-indent: 2em;
+        }/* 1em = 当前字号 */
+        .align {
+            text-align: center;
+        }/* 内容对齐 */
+        .decoration1{
+            text-decoration: none;
+        }/* 无修饰 */
+        .decoration2{
+            text-decoration: underline;
+        }/* 下划线 */
+        .decoration3{
+            text-decoration: line-through;
+        }/* 删除线 */
+        .decoration4{
+            text-decoration: overline;
+        }/* 上划线 */
+    </style>
+</head>
+<body>
+    <h3>字体</h3>
+    <p> <a href="./00_HTML_.html">导航</a> </p>
+    <hr>
+
+    <p> <font size="2">字号 font-size: 12px;</font><br>
+        <span>span1</span>
+        <span class="size">span2</span>
+    </p>
+    <hr>
+
+    <p> <font size="2">加粗 font-weight: 700;</font><br>
+        <span>span1</span>
+        <span class="weight">span2</span>
+    </p>
+    <hr>
+
+    <p> <font size="2">倾斜 font-style: normal;</font><br>
+        <em>em1</em>
+        <em class="style">em2</em>
+    </p>
+    <hr>
+
+    <p> <font size="2">行高 height: 50px; line-height: 50px; 单行垂直居中</font></p>
+    <p class="color height">p1</p>
+    <hr>
+
+    <p> <font size="2">字体族 font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino, Sans GB, "\5B8B\4F53", sans-serif;</font><br>
+        <span class="family">测试</span>
+    </p>
+    <hr>
+
+    <p> <font size="2">复合属性 font: 倾斜 加粗 字号/行高(12px/1.5) 字体</font><br>
+        <span class="font">测试</span>
+    </p>
+    <hr>
+
+    <p> <font size="2">缩进 text-indent: 2em;</font><br>
+        <span class="indent">测试</span>
+        <div class="indent">测试</div>
+    </p>
+    <hr>
+
+    <p> <font size="2">水平对齐 text-align: center;</font>
+        <div class="align">测试</div>
+        <div class="align">
+            <img src="https://www.runoob.com/try/demo_source/hackanm.gif">
+        </div>
+    </p>
+    <hr>
+
+    <p> <font size="2">文本修饰 text-decoration</font><br>
+        <font size="2">1无修饰 none</font><br>
+        <font size="2">2下划线 underline</font><br>
+        <font size="2">3删除线 line-through</font><br>
+        <font size="2">4上划线 overline</font><br>
+    </p>
+    <p> 
+        <a href="javascript:void(0)" class="decoration1">测试</a>
+        <span class="decoration2">测试</span>
+        <span class="decoration3">测试</span>
+        <span class="decoration4">测试</span>
+    </p>
+    <hr>
+
+    <p> <font size="2">颜色</font><br>
+        <font size="2">rgb(r,g,b) rgb取值0~255</font><br>
+        <font size="2">rgba(r,g,b,a) a取值0~1</font><br>
+        <font size="2">#RRGGBB 16进制取值0~f #000000简写#000</font>
+    </p>
+    <hr>
+</body>
+</html>

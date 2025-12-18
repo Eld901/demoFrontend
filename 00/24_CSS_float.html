@@ -1,0 +1,189 @@
+<!-- 20250628 前端学习笔记 (CSS相关知识)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动布局</title>
+    <style>
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background-color:paleturquoise;
+
+            float: left;
+        }
+        .div2 {
+            width: 200px;
+            height: 200px;
+            background-color:azure;
+
+            /* float: left; */
+            /* float: right; */
+        }
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        .product {
+            margin: 50px auto;
+            width: 1226px;
+            height: 628px;
+            background-color:rgb(200, 200, 200);
+        }
+        .left {
+            float: left;
+            width: 234px;
+            height: 628px;
+            background-color:yellowgreen;
+        }
+        .right {
+            float: right;
+            width: 978px;
+            height: 628px;
+            background-color:green;
+        }
+        .right li {
+            float: left;
+            margin-right: 14px;
+            margin-bottom: 14px;
+            width: 234px;
+            height: 300px;
+            background-color:greenyellow;
+        }
+        .right li:nth-child(4n) {
+            margin-right: 0;
+        }
+
+
+
+        .top {
+            /* overflow: hidden; */
+            margin: 10px auto;
+            width: 1200px;
+            /* height: 300px; */
+            background-color:azure;
+        }
+        .topl {
+            float: left;
+            width: 200px;
+            height: 300px;
+            background-color: aquamarine;
+        }
+        .topr {
+            float: right;
+            width: 950px;
+            height: 300px;
+            background-color: paleturquoise;
+        }
+
+
+        /* 1 块级标签 */
+        .clearfix {
+            clear: both;
+        }
+        /* 2 单伪元素 */
+        .clearfix::after {
+            content:"";
+            display: block;
+            clear: both;
+        }
+        /* 3 双伪元素 */
+        .clearfix::before, .clearfix::after {
+            content:"";
+            display: table;
+        }
+        .clearfix::after {
+            clear: both;
+        }
+
+        .bottom {
+            height: 100px;
+            background-color:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <h3>浮动布局</h3>
+    <p> <a href="./00_HTML_.html">导航</a> </p>
+    <hr>
+    
+    <p> 
+        <font size="2">浮动特点</font><br>
+        <font size="2">浮动：脱离标准流的控制</font><br>
+        <font size="2">1 顶对齐</font><br>
+        <font size="2">2 行内块</font><br>
+        <font size="2">3 脱标</font><br>
+        <div class="div1">div1</div>
+        <div class="div2">div2</div>
+    </p><br><hr>
+
+    <p>
+        <font size="2">浮动布局</font><br>
+        <font size="2">浮动：父宽度不够时，子元素换行排布</font><br>
+        <font size="2">解决：去掉第4个、第8个 li 的右边距</font><br>
+        <font size="2">li:nth-child(4n){margin-right: 0;}</font><br>
+        <div class="product">
+            <div class="left"></div>
+            <div class="right">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li>4</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li>8</li>
+                </ul>
+            </div>
+        </div>
+    </p><br><hr>
+
+    <p>
+        <font size="2">清除浮动</font><br>
+        <font size="2">1 块级标签：在父元素内容最后加一个块级元素 .clearfix ，设置 clear:both</font><br>
+        <font size="2">2 单伪元素：给父元素内容添加一个块级伪元素 .clearfix::after ， 设置 clear: both;</font><br>
+        <font size="2">
+            .clearfix::after {
+                content:"";
+                display: block;
+                clear: both;
+            }
+        </font><br>
+        <font size="2">3 双伪元素：给父元素内容添加块级伪元素 .clearfix::before, .clearfix::after ， 设置 display: table; clear: both;</font><br>
+        <font size="2">
+            .clearfix::before, .clearfix::after {
+                content:"";
+                display: table;
+            }<br>
+            .clearfix::after {
+                clear: both;
+            }
+        </font><br>
+        <font size="2">::bofore 解决外边距塌陷问题</font><br>
+        <font size="2">::after 清除浮动影响</font><br>
+        <font size="2">4 隐藏溢出：父元素设置 overflow:hidden </font><br>
+    </p><br><hr>
+    <p>
+        <font size="2">浮动布局</font><br>
+        <font size="2">浮动：父级没有高度时，排布出现问题</font><br>
+        <font size="2">原因：子级脱标后，不能撑开父级高度</font><br>
+        <div class="top clearfix">
+            <div class="topl"></div>
+            <div class="topr"></div>
+            <!-- <div class="clearfix"></div> -->
+        </div>
+        <div class="bottom">bottom</div>
+    </p><br><hr>
+
+    
+    <hr>
+</body>
+</html>

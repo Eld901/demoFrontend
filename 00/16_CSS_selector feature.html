@@ -1,0 +1,84 @@
+<!-- 20250614 前端学习笔记 (CSS相关知识)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器特性</title>
+    <style>
+        #id{
+            color: aquamarine;
+        }/* id选择器 */
+        .class {
+            color: lightblue;
+        }/* 类选择器 */
+        span{
+            color: cadetblue;
+        }/* 标签选择器 */
+        *{
+            color: teal;
+        }/* 通配符选择器 */
+
+        /* 优先级-复合选择器 (权重叠加)*/
+        /* (行内，id，类，标签) */
+        /* (0,0,2,1) 后代选择器 类 + 标签 选择器*/
+        .c1 .c2 div {
+            color: pink;
+        }
+
+        /* (0,1,0,1) 后代选择器 标签 + id 选择器*/
+        div #box3 {
+            color: plum;
+        }
+
+        /* (0,1,1,0) 后代选择器 id + 类 选择器*/
+        #box1 .c3 {
+            color: purple;
+        }
+
+        /* 优先级-复合选择器 (继承权重最低)*/
+        .father {
+            color: lavender;
+        }
+    </style>
+</head>
+<body>
+    <h3>特性</h3>
+    <p> <a href="./00_HTML_.html">导航</a> </p>
+    <hr>
+    
+    <p> <font size="2">1 继承性</font><br>
+      <span>子级继承父级的字体属性</span><br>
+      <span>局部优先于整体</span><br>
+    </p>
+
+    <p> <font size="2">2 层叠性</font><br>
+        <span>相同属性会覆盖</span><br>
+        <span>后修改优先于先修改</span><br>
+    </p>
+
+    <p> <font size="2">3 优先级</font><br>
+        <span>!important > 行内样式 > id选择器 > 类选择器 > 标签选择器 >通配符选择器 </span><br>
+        <span class="class" id="id">测试1 id选择器</span><br>
+        <span class="class" id="id" style="color: aqua;">测试2 行内</span><br>
+        <span class="class" id="id" style="color: yellowgreen !important;">测试3 !important</span><br>
+    </p>
+    <hr>
+    <p> <font size="2">优先级-复合选择器 (权重叠加)</font><br>
+        <span>(行内样式个数，id选择器个数，类选择器个数，标签选择器个数)</span><br>
+        <span>从左向右，优先级由高到低，同级比较个数</span><br>
+        <span>最高优先级 !important</span><br>
+        <span>最低优先级 继承特性</span><br>
+        <div id="box1" class="c1">
+            <div id="box2" class="c2">
+                <div id="box3" class="c3">测试</div>
+            </div>
+        </div>
+        <i class="father">
+            <i class="son">测试</i>
+        </i>
+    </p>
+
+    <hr>
+</body>
+</html>
