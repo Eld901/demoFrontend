@@ -3,6 +3,9 @@ ol {
     margin: 0;
     padding: 0;
 }
+pre {
+    margin: 0;
+}
 p {
     background-color: antiquewhite;
 }
@@ -11,6 +14,9 @@ p {
 }
 code {
     background-color: aquamarine;
+    /* font-weight: bold; */
+}
+code:hover {
     font-weight: bold;
 }
 .block {

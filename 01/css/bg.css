@@ -2,8 +2,33 @@ body {
     background-color:#ccc;
 }
 #container {
-    background-color: white;
+    /* background-color: white; */
     width: 600px;
     margin: 0 auto;
 }
-
+.section-top {
+    margin-bottom: 10px;
+    background-color: #efefef;
+}
+.section {
+    margin-bottom: 10px;
+    background-color: white;
+}
+.title {
+    background-color: #efefef;
+}
+span.h {
+    background-color: #bababa;
+}
+span.note {
+    font-size: small;
+    color: rgb(125, 125, 125);
+    background-color: rgb(201, 255, 255);
+}
+.code-demo {
+    font-size: small;
+}
+.code-demo:hover {
+    background-color: #efefef;
+    border: 1px aqua solid;
+}
