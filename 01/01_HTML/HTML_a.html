@@ -10,63 +10,93 @@
 </head>
 <body>
     <div id="container">
-        <ol>
-            <li><a href="../00_HTML_.html">返回</a></li>
-            <li><h3>链接 </h3></li>
-            <li>&lt;a&gt;&lt;/a&gt;标签的使用方法</li>
-            <hr>
-        </ol>
-        <ol>
-            <li><p>(1) herf&nbsp;：超链接的跳转目标地址</p></li>
-            <li><code>&lt;a herf="#"&gt;示例&lt;/a&gt;</code></li>
-            <li><code>&lt;a herf="javascript:void(0)"&gt;禁用跳转&lt;/a&gt;</code></li>
-            <li><code>&lt;a herf="https://eld901.github.io/"&gt;外部超链接&lt;/a&gt;</code></li>
-            <li><code>&lt;a herf="#part01"&gt;内部超链接&lt;/a&gt;</code></li>
-            <li><a href="#">示例</a></li>
-            <li><a href="javascript:void(0)">禁用跳转</a></li>
-            <li><a href="https://eld901.github.io/">外部超链接</a></li>
-            <li><a href="#part01">内部超链接</a></li>
-        </ol>
-        <ol>
-            <li><p>(2)内部超链接跳转测试</p></li>
-            <li><code>&lt;div id="part01"&gt;第01部分&lt;/div&gt;</code></li>
-            <li><code>&lt;div id="part02"&gt;第02部分&lt;/div&gt;</code></li>
-            <li><code>&lt;div id="part03"&gt;第03部分&lt;/div&gt;</code></li>
-            <li><div id="part01">第01部分</div></li>
-            <li><div name="part09">11</div></li>
-            <li><div name="part09">11</div></li>
-            <li><div name="part09">11</div></li>
-            <li><div name="part09">11</div></li>
-            <li><div name="part09">11</div></li>
-            <li><div id="part02">第02部分</div></li>
-            <li><div name="part09">11</div></li>
-            <li><div name="part09">11</div></li>
-            <li><div name="part09">11</div></li>
-            <li><div name="part09">11</div></li>
-            <li><div name="part09">11</div></li>
-            <li><div id="part03">第03部分</div></li>
-        </ol>
-        <ol>
-            <li><p>(3) target：超链接的打开方式</p></li>
-            <li><code>&lt;a href="./HTML_a.html" target="_self"&gt;自身 _self&lt;/a&gt;</code></li>
-            <li><code>&lt;a href="./HTML_a.html" target="_blank"&gt;新窗口 _blank&lt;/a&gt;</code></li>
-            <li><code>&lt;a href="./HTML_a.html" target="_parent"&gt;父框架 _parent&lt;/a&gt;</code></li>
-            <li><code>&lt;a href="./HTML_a.html" target="_top"&gt;顶层框架_top&lt;/a&gt;</code></li>
-            <li><a href="./HTML_a.html" target="_self">自身 _self</a></li>
-            <li><a href="./HTML_a.html" target="_blank">新窗口 _blank</a></li>
-            <li><a href="./HTML_a.html" target="_parent">父框架 _parent</a></li>
-            <li><a href="./HTML_a.html" target="_top">顶层框架_top</a></li>
-        </ol>
-        <ol>
-            <li><p>(4) title：超链接鼠标悬停的提示</p></li>
-            <li><code>&lt;a href="#" title="自定义提示"&gt;示例&lt;/a&gt;</code></li>
-            <li><a href="#" title="自定义提示">示例</a></li>
-        </ol>
-        <ol>
-            <li><p>(5)style：样式去掉下划线</p></li>
-            <li><code>&lt;a href="#" style="text-decoration: none;"&gt;示例&lt;/a&gt;</code></li>
-            <li><a href="#" style="text-decoration: none;">示例</a></li>
-        </ol>
+        <div class="section-top">
+            <a href="../00_HTML_.html">返回</a>
+            <h3>链接 </h3>
+            <span>&lt;a&gt;&lt;/a&gt;标签的使用方法</span>
+        </div>
+        <div class="section">
+            <div class="title">(1) herf&nbsp;：超链接的跳转目标地址</div>
+            <div class="code-demo">
+                <span class="note">【代码】</span>
+                <br><code>&lt;a herf="#"&gt;示例&lt;/a&gt;</code>
+                <br><code>&lt;a herf="javascript:void(0)"&gt;禁用跳转&lt;/a&gt;</code>
+                <br><code>&lt;a herf="https://eld901.github.io/"&gt;外部超链接&lt;/a&gt;</code>
+                <br><code>&lt;a herf="#part01"&gt;内部超链接&lt;/a&gt;</code>
+            </div>
+            <div class="code-demo">
+                <span class="note">【结果】</span>
+                <br><a href="#">示例</a>
+                <br><a href="javascript:void(0)">禁用跳转</a>
+                <br><a href="https://eld901.github.io/">外部超链接</a>
+                <br><a href="#part01">内部超链接</a>
+            </div>
+            
+        </div>
+        <div class="section">
+            <div class="title">(2)内部超链接跳转测试</div>
+            <div class="code-demo">
+                <span class="note">【代码】</span>
+                <br><code>&lt;div id="part01"&gt;第01部分&lt;/div&gt;</code>
+                <br><code>&lt;div id="part02"&gt;第02部分&lt;/div&gt;</code>
+                <br><code>&lt;div id="part03"&gt;第03部分&lt;/div&gt;</code> 
+            </div>
+            <div class="code-demo">
+                <span class="note">【结果】</span>
+                <div id="part01">第01部分</div>
+                <div name="part09">11</div>
+                <div name="part09">11</div>
+                <div name="part09">11</div>
+                <div name="part09">11</div>
+                <div name="part09">11</div>
+                <div id="part02">第02部分</div>
+                <div name="part09">11</div>
+                <div name="part09">11</div>
+                <div name="part09">11</div>
+                <div name="part09">11</div>
+                <div name="part09">11</div>
+                <div id="part03">第03部分</div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">(3) target：超链接的打开方式</div>
+            <div class="code-demo">
+                <span class="note">【代码】</span>
+                <br><code>&lt;a href="./HTML_a.html" target="_self"&gt;自身 _self&lt;/a&gt;</code>
+                <br><code>&lt;a href="./HTML_a.html" target="_blank"&gt;新窗口 _blank&lt;/a&gt;</code>
+                <br><code>&lt;a href="./HTML_a.html" target="_parent"&gt;父框架 _parent&lt;/a&gt;</code>
+                <br><code>&lt;a href="./HTML_a.html" target="_top"&gt;顶层框架_top&lt;/a&gt;</code>
+            </div>
+            <div class="code-demo">
+                <span class="note">【结果】</span>
+                <br><a href="./HTML_a.html" target="_self">自身 _self</a>
+                <br><a href="./HTML_a.html" target="_blank">新窗口 _blank</a>
+                <br><a href="./HTML_a.html" target="_parent">父框架 _parent</a>
+                <br><a href="./HTML_a.html" target="_top">顶层框架_top</a>    
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">(4) title：超链接鼠标悬停的提示</div>
+            <div class="code-demo">
+                <span class="note">【代码】</span>
+                <br><code>&lt;a href="#" title="自定义提示"&gt;示例&lt;/a&gt;</code>
+            </div>
+            <div class="code-demo">
+                <span class="note">【结果】</span>
+                <br><a href="#" title="自定义提示">示例</a>
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">(5)style：样式去掉下划线</div>
+            <div class="code-demo">
+                <span class="note">【代码】</span>
+                <br><code>&lt;a href="#" style="text-decoration: none;"&gt;示例&lt;/a&gt;</code>
+            </div>
+            <div class="code-demo">
+                <span class="note">【结果】</span>
+                <br><a href="#" style="text-decoration: none;">示例</a>   
+            </div>        
+        </div>
     </div>
 </body>
 </html>

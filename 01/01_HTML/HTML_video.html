@@ -10,30 +10,39 @@
 </head>
 <body>
     <div id="container">
-        <ol>
-            <li><a href="../00_HTML_.html">返回</a></li>
-            <li><h3>视频 </h3></li>
-            <li>&lt;video&gt;&lt;/video&gt;标签的使用方法</li>
-            <hr>
-        </ol>
-        <ol>
-            <li><p>(1) src：视频文件的URL</p></li>
-            <li><code>&lt;video src="http://vjs.zencdn.net/v/oceans.mp4" controls&gt;&lt;/video&gt;</code></li>
-            <li><code>&lt;video src="" controls&gt;&lt;/video&gt;</code> controls：控制面板</li>
-            <li><code>&lt;video src="" controls preload&gt;&lt;/video&gt;</code> preload：预加载，与autoplay冲突</li>
-            <li><code>&lt;video src="" controls autoplay&gt;&lt;/video&gt;</code> autoplay：自动播放</li>
-            <li><code>&lt;video src="" controls loop&gt;&lt;/video&gt;</code> loop：循环播放</li>
-            <li><code>&lt;video src="" controls muted&gt;&lt;/video&gt;</code> muted：静音播放</li>
-            <li><code>&lt;video src="" controls width&gt;&lt;/video&gt;</code> width：宽度(像素值)</li>
-            <li><code>&lt;video src="" controls height&gt;&lt;/video&gt;</code> height：高度(像素值)</li>
-            <li><video src="http://vjs.zencdn.net/v/oceans.mp4" width="500" controls></video></li>
-        </ol>
-        <ol>
-            <li><p>(2) 检测浏览器支持情况</p></li>
-            <li>1. 标签法检测</li>
-            <li><code>&lt;video src="" controls&gt;您的浏览器不支持HTML5视频&lt;/video&gt;</code></li>
-            <li>2. Javascript法检测</li>
-            <li><pre><code class="block">&lt;div id="support"&gt;&lt;/div&gt;
+        <div class="section-top">
+            <a href="../00_HTML_.html">返回</a>
+            <h3>视频 </h3>
+            <span>&lt;video&gt;&lt;/video&gt;标签的使用方法</span>
+        </div>
+        <div class="section">
+            <div class="title">(1) src：视频文件的URL</div>
+            <div class="code-demo">
+                <span class="note">代码</span>
+                <br><code>&lt;video src="http://vjs.zencdn.net/v/oceans.mp4" controls&gt;&lt;/video&gt;</code>
+                <br><code>&lt;video src="" controls&gt;&lt;/video&gt;</code> <span>controls：控制面板</span>
+                <br><code>&lt;video src="" controls preload&gt;&lt;/video&gt;</code> <span>preload：预加载，与autoplay冲突</span>
+                <br><code>&lt;video src="" controls autoplay&gt;&lt;/video&gt;</code> <span>autoplay：自动播放</span>
+                <br><code>&lt;video src="" controls loop&gt;&lt;/video&gt;</code> <span>loop：循环播放</span>
+                <br><code>&lt;video src="" controls muted&gt;&lt;/video&gt;</code> <span>muted：静音播放</span>
+                <br><code>&lt;video src="" controls width&gt;&lt;/video&gt;</code> <span>width：宽度(像素值)</span>
+                <br><code>&lt;video src="" controls height&gt;&lt;/video&gt;</code> <span>height：高度(像素值)</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">结果</span>
+                <br><video src="http://vjs.zencdn.net/v/oceans.mp4" width="500" controls></video>
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">(2) 检测浏览器支持情况</div>
+            <div class="code-demo">
+                <span class="h">1. 标签法检测</span>
+                <br><code>&lt;video src="" controls&gt;您的浏览器不支持HTML5视频&lt;/video&gt;</code>
+            </div>
+            <div class="code-demo">
+                <span class="h">2. Javascript法检测</span>
+                <br><span class="note">代码</span>
+                <br><pre><code class="block">&lt;div id="support"&gt;&lt;/div&gt;
 &lt;script&gt;
 function test() {
     var supportVideo = !!document.createElement("video").
@@ -45,17 +54,19 @@ function test() {
     }
 }
 test ();
-&lt;/script&gt;</code></pre></li>
-            <li>代码解释</li>
-            <li><div class="note">
-                <code>&lt;div id="support"&gt;&lt;/div&gt;</code> 创建div
-                <br><code>function test() {}</code>创建函数
-                <br><code>!!</code> 结果转换为布尔值
-                <br><code>document.getElementById("support").innerHTML</code> 赋值给div元素
-                <br><code>test ();</code> 调用函数
-            </div></li>
-            <li>代码示例</li>
-            <li><div id="support" class="note"></div>
+&lt;/script&gt;</code></pre>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><code>&lt;div id="support"&gt;&lt;/div&gt;</code> <span>创建div</span>
+                <br><code>function test() {}</code><span>创建函数</span>
+                <br><code>!!</code> <span>结果转换为布尔值</span>
+                <br><code>document.getElementById("support").innerHTML</code> <span>赋值给div元素</span>
+                <br><code>test ();</code> <span>调用函数</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">结果</span>
+                <div id="support"></div>
                 <script>
                     function test() {
                         var supportVideo = !!document.createElement("video").
@@ -68,40 +79,40 @@ test ();
                     }
                     test ();
                 </script>
-            </li>
-            <li><p>(3) 视频来源多样性</p></li>
-            <li><pre><code class="block">&lt;video controls&gt;
-    &lt;source src="video/testvideo.mp4"&gt;
-    &lt;source src="video/testvideo.ogg"&gt;
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">(3) 视频来源多样性</div>
+            <div class="code-demo">
+                <span class="note">代码</span>
+                <br><pre><code class="block">&lt;video controls&gt;
+    &lt;source src="video/test.mp4"&gt;
+    &lt;source src="video/test.ogg"&gt;
     您的浏览器不支持HTML5视频
-&lt;/video&gt;</code></pre></li>
-            <li><div class="note">
-                目前HTML5支持的常用视频格式有：<br>
-                MPEG4——后缀名为.mp4 <br>
-                Ogg——后缀名为.ogg <br>
-                WebM——后缀名为.webm <br>
-                目前尚不存在得到所有浏览器支持的视频格式， <br>
-                因此在开发过程中，如果不明确用户所使用的浏览器类型， <br>
-                则需要起码准备两种视频格式备用
-                <hr>
-                浏览器先判断音频是否支持mp4格式，支持则播放test.mp4文件
-                <br>否则判断是否支持ogg格式，支持则播放test.ogg文件
-                <br>如果都不支持，则返回&lt;video&gt;标签一个错误事件
-                
-            </div></li>
-            <li><pre><code class="block">&lt;video controls&gt;
-    &lt;source src="video/test.mp4 type='video/mp4; codecs="avc1.42E01E,mp4a.40.2"'&gt;
-    &lt;source src="video/test.ogg type='video/ogg; codec="dirac,speex"'&gt;
-&lt;/video&gt;</code></pre></li>
-            <li><div class="note">
-                如果能明确视频文件所需视频解码器的值，
-                <br>也可以在&lt;source&gt;标签的type属性中指定，
-                <br>帮助浏览器更有效率地做出正确的判断
-            </div></li>
-        </ol>
-        <ol>
-            <li><p>(4) 自定义视频控制</p></li>
-            <li><pre><code class="block">&lt;video id="video01" src="video/test.mp4" width="500"&gt;
+&lt;/video&gt;</code></pre>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><span>浏览器先判断音频是否支持mp4格式，支持则播放test.mp4文件</span>
+                <br><span>否则判断是否支持ogg格式，支持则播放test.ogg文件</span>
+                <br><span>如果都不支持，则返回&lt;video&gt;标签一个错误事件</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br>目前HTML5支持的常用视频格式有：
+                <br>MPEG4——后缀名为.mp4 
+                <br>Ogg——后缀名为.ogg 
+                <br>WebM——后缀名为.webm 
+                <br>目前尚不存在得到所有浏览器支持的视频格式，
+                <br>因此在开发过程中，如果不明确用户所使用的浏览器类型，
+                <br>则需要起码准备两种视频格式备用
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">(4) 自定义视频控制</div>
+            <div class="code-demo">
+                <span class="note">代码</span>
+                <br><pre><code class="block">&lt;video id="video01" src="http://vjs.zencdn.net/v/oceans.mp4" width="500"&gt;
     您的浏览器不支持HTML5视频
 &lt;/video&gt;
 &lt;div&gt;
@@ -127,23 +138,24 @@ test ();
     function smallVideo () {
         video01.width = "400";
     }
-&lt;/script&gt;</code></pre></li>
-            <li>代码解释</li>
-            <li><div class="note">
-                <code>&lt;video&gt;</code> 创建video对象，去掉controls禁用浏览器自带视频控件
-                <br><code>&lt;button&gt;</code> 创建button对象
-                <br><code>onclick = "toggleVideo()"</code>点击调用函数
-                <br><code>onclick = "bigVideo()"</code>点击调用函数
-                <br><code>onclick = "smallVideo()"</code>点击调用函数
-                <br><code>function toggleVideo() {}</code>创建函数
-                <br><code>function bigVideo() {}</code>创建函数
-                <br><code>function samllVideo() {}</code>创建函数
-                <br><code>document.getElementById("")</code>获取对象
-                <br><code>toggleBtn.innerHTML = ""</code>赋值给对象
-            </div></li>
-            <li>代码示例</li>
-            <li>
-                <video src="http://vjs.zencdn.net/v/oceans.mp4" width="500" id="video01">
+&lt;/script&gt;</code></pre>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><code>&lt;video&gt;</code> <span>创建video对象，去掉controls禁用浏览器自带视频控件</span>
+                <br><code>&lt;button&gt;</code> <span>创建button对象</span>
+                <br><code>onclick = "toggleVideo()"</code><span>点击调用函数</span>
+                <br><code>onclick = "bigVideo()"</code><span>点击调用函数</span>
+                <br><code>onclick = "smallVideo()"</code><span>点击调用函数</span>
+                <br><code>function toggleVideo() {}</code><span>创建函数</span>
+                <br><code>function bigVideo() {}</code><span>创建函数</span>
+                <br><code>function samllVideo() {}</code><span>创建函数</span>
+                <br><code>document.getElementById("")</code><span>获取对象</span>
+                <br><code>toggleBtn.innerHTML = ""</code><span>赋值给对象</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">结果</span>
+                <br><video src="http://vjs.zencdn.net/v/oceans.mp4" width="500" id="video01">
                     您的浏览器不支持HTML5视频
                 </video>
                 <div>
@@ -170,39 +182,295 @@ test ();
                         video01.width = "400";
                     }
                 </script>
-            </li>
-        </ol>
-        <ol>
-            <li><p>(5) 媒体API其他通用功能</p></li>
-            <li><div class="note">
-                HTML5音频和视频都属于HTML5媒体元素，具有一些通用功能：
-                <br>1. 标记播放时间范围
-                <br>2. 跳转播放时间点
-                <br>3. 获取播放时间
-                <br>4. 终止媒体文件的下载
-                <br>5. 使用Flash播放器
-            </div></li>
-            <li><hr>5.1 标记媒体播放时间范围</li>
-            <li><code>src="音频或视频的URL地址#t=[starttime][,endtime]"</code></li>
-            <li><code>src="video/test.mp4#t=20,25"</code>媒体文件从第20秒开始播放，到第25秒结束</li>
-            <li><code>src="video/test.mp4#t=,01::50:00"</code>媒体文件从最开始播放，到第1小时50分结束</li>
-            <li><code>src="video/test.mp4#t=20"</code>媒体文件从第20秒开始播放，到最后结束</li>
-            <li>代码解释</li>
-            <li><div class="note">
-                使用#标志分割媒体文件来源URL和后面补充信息。
-                <br>starttime 为开始播放时间，省略不写代表默认开始时间为媒体文件的开头。
-                <br>endtime 为终止播放时间，省略不写代表终止时间为媒体文件的结尾。
-                <br>starttime 和 endtime 均可以填入整数或者浮点数类型的秒数，也可以写作时:分:秒的格式
-            </div></li>
-            <li>代码示例</li>
-            <li><audio src="http://vjs.zencdn.net/v/oceans.mp4#t=20,25" controls></audio></li>
-            <li><hr>5.2 跳转媒体播放时间点</li>
-
-
-
-
-
-        </ol>
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">(5) 媒体API其他通用功能</div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><span>HTML5音频和视频都属于HTML5媒体元素，具有一些通用功能：</span>
+                <br><span>1. 标记播放时间范围</span>
+                <br><span>2. 跳转播放时间点</span>
+                <br><span>3. 获取播放时间</span>
+                <br><span>4. 终止媒体文件的下载</span>
+                <br><span>5. 使用Flash播放器</span>
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">5.1 标记媒体播放时间范围</div>
+            <div class="code-demo">
+                <span class="note">代码</span>
+                <br><code>src="音频或视频的URL地址#t=[starttime][,endtime]"</code>
+                <br><code>src="video/test.mp4#t=20,25"</code> <span>媒体文件从第20秒开始播放，到第25秒结束</span>
+                <br><code>src="video/test.mp4#t=,01::50:00"</code> <span>媒体文件从最开始播放，到第1小时50分结束</span>
+                <br><code>src="video/test.mp4#t=20"</code> <span>媒体文件从第20秒开始播放，到最后结束</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><span>使用</span> <code>#</code> <span>标志分割媒体文件来源URL和后面补充信息。</span>
+                <br><code>starttime</code> <span>为开始播放时间，省略不写代表默认开始时间为媒体文件的开头。</span>
+                <br><code>endtime</code> <span>为终止播放时间，省略不写代表终止时间为媒体文件的结尾。</span>
+                <br><code>starttime</code> <span>和</span> <code>endtime</code> <span>均可以填入整数或者浮点数类型的秒数，也可写作</span> <code>时:分:秒</code> <span>的格式</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">结果</span>
+                <br><audio src="http://vjs.zencdn.net/v/oceans.mp4#t=20,25" controls></audio>
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">5.2 跳转媒体播放时间点</div>
+            <div class="code-demo">
+                <span class="note">代码</span>
+                <br><pre><code class="block">&lt;video id="media02" src="http://vjs.zencdn.net/v/oceans.mp4" controls width="500"&gt;
+    您的浏览器不支持HTML5视频
+&lt;/video&gt;
+&lt;div&gt;
+    &lt;button onclick="changeTime()"&gt;跳转至 0:0:20&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var media02 = document.getElementById("media02");
+    function changeTime () {
+        media02.currentTime = 20;
+        media02.play();
+    }
+&lt;/script&gt;</code></pre>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><code>&lt;video id="media02"&gt;</code> <span>创建video对象，并赋予id</span>
+                <br><code>&lt;button onclick="changeTime()"&gt;</code> <span>创建button对象，并添加点击事件</span>
+                <br><code>function changeTime() {}</code> <span>创建函数</span>
+                <br><code>var media02 = document.getElementById("media02");</code> <span>获取视频文件对象</span>
+                <br><code>media.currentTime = 20;</code> <span>跳转视频文件播放时间点</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">结果</span>
+                <br><video id="media02" src="http://vjs.zencdn.net/v/oceans.mp4" controls width="500">
+                    您的浏览器不支持HTML5视频
+                </video>
+                <div><button onclick="changeTime()">跳转至 0:0:20</button></div>
+                <script>
+                    var media02 = document.getElementById("media02");
+                    function changeTime () {
+                        media02.currentTime = 20;
+                        media02.play();
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">5.3 获取媒体播放时间</div>
+            <div class="code-demo">
+                <span class="note">代码</span>
+                <br><pre><code class="block">&lt;video id="media03" src="http://vjs.zencdn.net/v/oceans.mp4" controls width="500"&gt;
+        您的浏览器不支持HTML5视频
+&lt;/video&gt;
+&lt;br&gt;&lt;button onclick="getTime()"&gt;点击获取视频时间信息&lt;/button&gt;
+&lt;div id="status"&gt;&lt;/div&gt;
+&lt;script&gt;
+    function getTime() {
+        var media03 = document.getElementById("media03");
+        var starttime = media03.seekable.start(0);
+        var endtime = media03.seekable.end(0);
+        var playedtime = media03.played.end(0);
+        var status = document.getElementById("status");
+        status.innerHTML = "视频开始时间：" + starttime + 
+                            "&lt;br&gt;视频结束时间：" + endtime + 
+                            "&lt;br&gt;视频已播放时间：" + playedtime;
+    }
+&lt;/script&gt;</code></pre>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><code>&lt;video id="media03"&gt;</code> <span>创建video对象，并赋予id</span>
+                <br><code>&lt;button onclick="getTime()"&gt;</code> <span>创建button对象，并添加点击事件</span>
+                <br><code>&lt;div id="status"&gt;</code> <span>创建div对象，并赋予id</span>
+                <br><code>function getTime() {}</code> <span>创建函数</span>
+                <br><code>var starttime = media03.seekable.start(0);</code> <span>获取视频文件开始播放的时间</span>
+                <br><code>var endtime = media03.seekable.end(0);</code> <span>获取视频文件结束播放的时间</span>
+                <br><code>var playedtime = media03.played.end(0);</code> <span>获取视频文件已经播放的时长</span>
+                <br><code>status.innerHTML = ""</code> <span>传递赋值</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br> <span>HTML5媒体文件API允许获取媒体播放的开始与结束时间，需要使用</span> <code>seekable</code> <span>属性；</span>
+                <br><code>seekable</code> <span>属性的</span> <code>start(index)</code> <span>方法用于获取开始时间，</span><code>end(index)</code><span>用于获取结束时间；</span>
+                <br><span>其中</span><code>index</code><span>表示媒体文件的来源序号，默认只有一个的情况填数字0。</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><span>HTML5媒体文件同时也允许获取媒体当前播放时间点，需要使用</span> <code>played</code> <span>属性;</span>
+                <br><code>played</code><span>属性也包含</span><code>start(index)</code><span>和</span><code>end(index)</code><span>，已播放时间为两者之差;</span>
+                <br><span>如果默认从0开始播放，则当前播放时间点即已经播放的时长，可仅用</span><code>end()</code><span>方法。</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">结果</span>
+                <br><video id="media03" src="http://vjs.zencdn.net/v/oceans.mp4" controls width="500"></video>
+                <br><button onclick="getTime()">点击获取视频时间信息</button>
+                <div id="status"></div>
+                <script>
+                    function getTime() {
+                        var media03 = document.getElementById("media03");
+                        var starttime = media03.seekable.start(0);
+                        var endtime = media03.seekable.end(0);
+                        var playedtime = media03.played.end(0);
+                        var status = document.getElementById("status");
+                        status.innerHTML = "视频开始时间：" + starttime + 
+                                            "<br>视频结束时间：" + endtime + 
+                                            "<br>视频已播放时间：" + playedtime;
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">5.4 终止媒体文件的下载</div>
+            <div class="code-demo">
+                <span class="note">代码</span>
+                <br><pre><code class="block">&lt;video id="media04" src="http://vjs.zencdn.net/v/oceans.mp4" controls&gt;
+    您的浏览器不支持HTML5视频&lt;/video&gt;
+&lt;br&gt;&lt;button onclick="startMedia()"&gt;点击恢复视频 (play)&lt;/button&gt;
+&lt;br&gt;&lt;button onclick="stopMedia01()"&gt;点击终止下载 (src)&lt;/button&gt;
+&lt;br&gt;&lt;button onclick="stopMedia02()"&gt;点击终止下载 (removeAttribute)&lt;/button&gt;
+&lt;script&gt;
+    function stopMedia01() {
+        var media04 = document.getElementById("media04");
+        media04.pause();
+        media04.removeAttribute("src");
+    }
+    function stopMedia02() {
+        var media04 = document.getElementById("media04");
+        media04.pause();
+        media04.src="";
+    }
+    function startMedia() {
+        var media04 = document.getElementById("media04");
+        media04.src="http://vjs.zencdn.net/v/oceans.mp4";
+        media04.play();
+    }
+&lt;/script&gt;</code></pre>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><code>&lt;video id="media04"&gt;</code><span>创建video对象，并赋予id</span>
+                <br><code>&lt;button onclick="stopMedia()"&gt;</code><span>创建button对象，并添加点击事件</span>
+                <br><code>function stopMedia() {}</code><span>创建函数</span>
+                <br><code>var media04 =document.getElementById("media04");</code><span>获取对象</span>
+                <br><code>media04.pause();</code><span>暂停媒体文件的播放</span>
+                <br><code>media04.src="";</code><span>将src属性设置为空值</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><span>HTML5中的</span><code>pause()</code><span>方法可以用于暂停媒体文件的播放，</span>
+                <br><span>但是即使处在暂停状态，浏览器仍然会在后台继续下载。</span>
+                <br><span>解决办法是先暂停媒体文件的播放，然后将其 <code>src</code>属性去除，或设置为空。</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">结果</span>
+                <br><video id="media04" src="http://vjs.zencdn.net/v/oceans.mp4" width="500" controls>您的浏览器不支持HTML5视频</video>
+                <br><button onclick="startMedia()">点击恢复视频 (play)</button>
+                <br><button onclick="stopMedia01()">点击终止下载 (removeAttribute)</button>
+                <br><button onclick="stopMedia02()">点击终止下载 (src)</button>
+                <script>
+                    function stopMedia01() {
+                        var media04 = document.getElementById("media04");
+                        media04.pause();
+                        media04.removeAttribute("src");
+                    }
+                    function stopMedia02() {
+                        var media04 = document.getElementById("media04");
+                        media04.pause();
+                        media04.src="";
+                    }
+                    function startMedia() {
+                        var media04 = document.getElementById("media04");
+                        media04.src="http://vjs.zencdn.net/v/oceans.mp4";
+                        media04.play();
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="section">
+            <div class="title">5.5 使用Flash播放器</div>
+            <div class="code-demo">
+                <span class="note">代码</span>
+                <br><pre><code class="block">&lt;video src="test.mp4" controls&gt;
+    &lt;object data="flash/test.swf" type="application/x-shockwave-flash" width="640" height="480"&gt;
+        &lt;param name="movie" value="flash/test.swf"&gt;
+        &lt;param name="flashvars" value="file=D:/video/test.mp4"&gt;
+    &lt;/object&gt;
+&lt;/video&gt;</code></pre>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><span>目前 Flash 几乎已经没有主流应用场景；</span>
+                <br><span>所有主流浏览器 <code>Chrome、Edge、Firefox、Safari</code>均已在 2021 年初彻底屏蔽了原生的 Flash 插件接口；</span>
+                <br><span>官方 Adobe Flash Player 也于 2020 年 12 月 31 日停止维护，</span>
+                <br><span>并在 2021 年 1 月 12 日起强制阻止任何 Flash 内容运行。</span>
+                <br><span>当下想“在浏览器里直接打开 .swf”</span>
+                <br><span>只能依赖模拟器（如 <code>Ruffle</code>）</span>
+                <br><span>或回退到老旧版本的浏览器，再外挂第三方“Clean Flash”</span>
+                <br><span>二者都不是官方支持方案，仅用于临时兼容个别遗留站点。</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><span>当浏览器不支持HTML5媒体API时，会执行标签收尾内部的内容;</span>
+                <br><span>利用此原理，可以为浏览器准备一个Flash播放器选项。</span>
+                <br><span>当</span><code>&lt;video&gt;</code><span>标签不被支持时，浏览器会执行其内部的</span><code>&lt;object&gt;</code><span>相关内容</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><span>需要注意的是，只有IE浏览器可以接受为该</span><code>&lt;object&gt;</code><span>标签添加</span><code>id</code><span>或</span><code>class</code><span>属性；</span>
+                <br><span>因此尽量不要为浏览器添加此类属性，以保证兼容性最大化；</span>
+                <br><span>Flash播放器仅支持.flv或.mp4格式的视频播放。</span>
+            </div>
+            <div class="code-demo">
+                <span class="note">解释</span>
+                <br><code>&lt;video src="test.mp4" controls&gt;</code> <span>
+                <br>如果浏览器能播 &lt;video&gt; 就用原生播放器</span>
+                <br><span>如果浏览器不支持或路径错误导致打不开，则使用Flash作为备选项进行播放</span>
+                <br><code>&lt;object data="flash/test.swf" type="application/x-shockwave-flash" width="640" height="480"&gt;</code>
+                <br><code>data=""</code><span>即外部资源路径，</span> <code>type=""</code> <span>即声明Flash的MIME类型</span>
+                <br><span>MIME类型由“文件格式规范”统一规定，具体需要查表。</span>
+                <br><span>MIME类型常见值：</span>
+                <br><pre>
+    <span>Flash：</span><code>application/x-shockwave-flash</code>
+    <span>PDF：</span><code>application/pdf</code>
+    <span>MP4：</span><code>video/mp4</code>
+    <span>Silverlight：</span><code>application/x-silverlight-2</code>
+    <span>普通EXE：</span><code>application/octet-stream</code></pre>
+                <code>width="" height=""</code> <span>代表浏览器把 640×480 的矩形区域交给 Flash 插件（或 Ruffle 模拟器）</span>
+                <br><span>建议指定宽高，否则可能出现浏览器无法预留占位、画面拉伸或出现滚动条、响应式页面更难控制等问题</span>
+                <br><code>&lt;param name="movie" value="flash/test.swf"&gt;</code>
+                <br><code>&lt;param name="flashvars" value="file=D:/video/test.mp4"&gt;</code>
+                <br><span>在&lt;object&gt;标签里，浏览器只负责把对象（Flash、PDF、Java Applet …）拉起来，</span>
+                <br><span>插件启动后的细节（加载哪个主文件、用什么尺寸、传哪些自定义参数...）就靠&lt;params&gt;逐条传进去，</span>
+                <br><span>即以一组键值对的形式初始化插件，变量名是根据官方配置表规定好的。</span>
+                <br><code>name=""</code><span>即变量名，</span><code>value=""</code><span>即变量值。</span>
+                <br><span>以Adobe Flash Player为例。&lt;param&gt;标签的常见变量名：</span>
+                <br><pre>
+    <code>movie</code><span>：主swf文件的URL（必写）</span>
+    <code>quality</code><span>：渲染质量（low / medium / high / best）</span>
+    <code>bgcolor</code><span>：背景色（#RRGGBB）</span>
+    <code>wmode</code><span>：窗口模式（window / opaque / transparent）</span>
+    <code>allowfullscreen</code><span>：是否允许全屏（true / false）</span>
+    <code>flashvars</code><span>：自定义“散包”参数串，用 & 拼接（k1=v1&k2=v2…）</span>
+    <code>allowScriptAccess</code><span>：脚本跨域权限（always / sameDomain / never）</span></pre>
+    PDF 插件。<span>&lt;param&gt;标签的常见变量名：</span><code>src</code>、<code>view</code>、<code>page</code>
+                <br>Java Applet。<span>&lt;param&gt;标签的常见变量名：</span><code>code</code>、<code>codebase</code>、<code>archive</code>
+                <br>QuickTime。<span>&lt;param&gt;标签的常见变量名：</span><code>src</code>、<code>autoplay</code>、<code>controller</code>
+            </div>
+        </div>
+        <div class="section">
+            <div class="title"></div>
+            <div class="code-demo">
+                <span class="note"></span>
+                <br>
+            </div>
+            <div class="code-demo">
+                <span class="note"></span>
+                <br>
+            </div>
+        </div>
     </div>
 
     <hr>
